@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coffee Café Landing Page</title>
+<style>
+/* ---------- Global Styles ---------- */
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(120deg,#2c1b0f,#1a0d07);
+    color:#fff;
+    overflow-x:hidden;
+}
+/* Animated background gradient */
+@keyframes gradientMove{
+    0%{background-position:0% 50%}
+    100%{background-position:100% 50%}
+}
+
+/* ---------- Navbar ---------- */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 10%;
+    background:rgba(0,0,0,0.3);
+    backdrop-filter:blur(10px);
+    position:fixed;top:0;width:100%;z-index:100;
+}
+nav .logo{
+    font-size:1.5rem;
+    color:#f0a500;
+    font-weight:bold;
+}
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+nav ul li a{
+    color:#fff;text-decoration:none;font-size:1rem;
+    transition:.3s;
+}
+nav ul li a:hover{color:#f0a500}
+
+/* ---------- Hero Section ---------- */
+.hero{
+    display:flex;flex-direction:column;justify-content:center;align-items:center;
+    height:100vh;text-align:center;padding:20px;
+}
+.hero h1{
+    font-size:3rem;margin-bottom:10px;color:#f0a500;text-shadow:0 0 15px #f0a500;
+}
+.hero p{font-size:1.2rem;margin-bottom:20px;max-width:600px}
+.hero .cta{
+    background:#f0a500;border:none;padding:15px 30px;font-size:1.2rem;color:#000;
+    border-radius:30px;cursor:pointer;box-shadow:0 0 20px #f0a500;
+    transition:.3s;
+}
+.hero .cta:hover{background:#fff;box-shadow:0 0 30px #fff}
+
+/* Coffee Cup Animation */
+.coffee-cup{
+    position:relative;width:120px;height:150px;margin:30px auto;
+    background:#3e2723;border-radius:0 0 60px 60px;
+    overflow:hidden;box-shadow:0 10px 20px rgba(0,0,0,0.5);
+}
+.coffee-cup::before{
+    content:'';position:absolute;width:60px;height:80px;border:10px solid #3e2723;
+    border-radius:50%;top:30px;right:-50px;
+}
+.steam{
+    position:absolute;width:10px;height:60px;left:50%;transform:translateX(-50%);
+    top:-60px;background:linear-gradient(to top,#fff,#fff0);
+    animation:steamRise 3s infinite ease-in-out;
+}
+@keyframes steamRise{
+    0%{opacity:0;transform:translateX(-50%) translateY(0)}
+    50%{opacity:1;transform:translateX(-50%) translateY(-30px)}
+    100%{opacity:0;transform:translateX(-50%) translateY(-60px)}
+}
+
+/* Floating Coffee Beans */
+.bean{
+    width:20px;height:30px;background:#5d4037;border-radius:50%;
+    position:absolute;animation:floatBeans 8s infinite linear;
+}
+.bean::before{
+    content:'';position:absolute;width:4px;height:100%;background:#3e2723;left:8px;
+}
+@keyframes floatBeans{
+    0%{transform:translateY(100vh)}
+    100%{transform:translateY(-200px)}
+}
+
+/* ---------- Menu Section ---------- */
+.menu{
+    text-align:center;padding:100px 20px;background:#1a0d07;
+}
+.menu h2{font-size:2.5rem;color:#f0a500;margin-bottom:20px}
+.menu-items{
+    display:flex;justify-content:center;flex-wrap:wrap;gap:30px;margin-top:30px;
+}
+.item{
+    width:200px;height:220px;background:rgba(255,255,255,0.05);border-radius:15px;
+    backdrop-filter:blur(10px);display:flex;flex-direction:column;justify-content:center;align-items:center;
+    box-shadow:0 0 15px rgba(240,165,0,0.3);
+    transition:.3s;
+}
+.item:hover{transform:scale(1.1)}
+.item .cup{
+    width:60px;height:80px;background:#3e2723;border-radius:0 0 40px 40px;margin-bottom:10px;
+    position:relative;
+}
+.item .cup::before{
+    content:'';position:absolute;width:30px;height:40px;border:6px solid #3e2723;top:20px;right:-25px;border-radius:50%;
+}
+.item p{font-size:1.2rem;color:#fff;margin-top:10px}
+
+/* ---------- Footer ---------- */
+footer{
+    text-align:center;padding:20px;background:#000;margin-top:50px;
+}
+footer a{color:#f0a500;text-decoration:none}
+footer a:hover{text-decoration:underline}
+
+/* Responsive */
+@media(max-width:768px){
+    nav ul{display:none}
+    .menu-items{flex-direction:column;align-items:center}
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+    <div class="logo">☕ Café Aroma</div>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#offers">Offers</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+    <div class="coffee-cup">
+        <div class="steam"></div>
+    </div>
+    <h1>Welcome to Café Aroma</h1>
+    <p>Your perfect coffee experience, made with love and served with style.</p>
+    <button class="cta">Order Now</button>
+</section>
+
+<!-- Floating Beans -->
+<div class="bean" style="left:10%;animation-delay:0s;"></div>
+<div class="bean" style="left:30%;animation-delay:2s;"></div>
+<div class="bean" style="left:60%;animation-delay:4s;"></div>
+<div class="bean" style="left:80%;animation-delay:6s;"></div>
+
+<!-- Menu Section -->
+<section class="menu" id="menu">
+    <h2>Our Menu</h2>
+    <div class="menu-items">
+        <div class="item">
+            <div class="cup"></div>
+            <p>Espresso</p>
+        </div>
+        <div class="item">
+            <div class="cup"></div>
+            <p>Cappuccino</p>
+        </div>
+        <div class="item">
+            <div class="cup"></div>
+            <p>Latte</p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>☕ Designed by <strong>Piyush Joshi</strong> | 
+    <a href="https://www.linkedin.com/in/piyush-joshi-703b722b7" target="_blank">LinkedIn</a></p>
+</footer>
+
+<script>
+// Generate random beans falling
+document.querySelectorAll('.bean').forEach(bean=>{
+    bean.style.top = Math.floor(Math.random()*window.innerHeight)+'px';
+});
+</script>
+</body>
+  </html>
