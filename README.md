@@ -1,4 +1,4 @@
-# ☕ Coffee Café Landing Page (Pro Max)
+# ☕ Coffee Café Landing Page 
 
 A **futuristic coffee shop landing page** built using **pure HTML, CSS, and JavaScript**.  
 No stock images – all coffee cups, beans, and animations are created using **CSS art** for a clean, creative, and lightweight design.
