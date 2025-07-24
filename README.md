@@ -15,7 +15,7 @@ No stock images – all coffee cups, beans, and animations are created using **C
 ✔ Footer credit with LinkedIn link  
 
 ## 🎥 Live Demo
-👉 [**View on GitHub Pages**](https://your-username.github.io/coffee-cafe-landing-page/)  
+👉 [**View on GitHub Pages**](https://piyush2707.github.io/coffee-cafe-landing-page/ )  
 *(Enable GitHub Pages after uploading repo)*  
 
 
